@@ -28,5 +28,4 @@ const traerFormContacto = (req, res) => {
 }
 
 
-
 module.exports = {traerFormLogin, traerFormRegistro, traerFormPaseadores, traerFormContacto}  
