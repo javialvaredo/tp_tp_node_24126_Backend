@@ -1,4 +1,4 @@
-const db = require('./database/database.js')
+const db = require('../database/database.js')
 
 const {DataTypes} = require('sequelize')
 
@@ -12,4 +12,4 @@ const posteosModel = db.define('users', {
 })
 
 module.exports = posteosModel
-  
+
