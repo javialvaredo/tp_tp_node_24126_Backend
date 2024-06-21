@@ -11,7 +11,6 @@ const { login,
 } = require('../controllers/posteosControllers.js')
 
 
-
 router.post('/login-form', login)
 router.post('/registro-form', altaRegistro)
 router.get('/registro-form', traerRegistros)
@@ -24,8 +23,8 @@ router.post('/procesar_solicitud', traerFormPaseadores)
 router.post('/contacto-form', traerFormContacto)
 
 router.get('http://localhost:5500/crud.html', (req, res) => {
-    res.send('¡Bienvenido al dashboard!');
-    // Aquí renderizarías tu vista del dashboard o manejarías la lógica correspondiente
+    res.send('¡Bienvenido al CRUD!');
+    
   });
 
 
