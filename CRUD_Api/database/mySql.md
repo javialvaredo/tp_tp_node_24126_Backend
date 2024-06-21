@@ -4,6 +4,8 @@ mysql -h localhost -u root -p
 /---------------------------------------------------------------------\
 CREAR BASE DE DATOS
 
+* Copiar y pegar en un nuevo SQL query:
+
 CREATE SCHEMA `users_petShop` DEFAULT CHARACTER SET utf8mb4 ;
 USE users_petShop;
 
@@ -17,4 +19,3 @@ USE users_petShop;
         createdAt DATETIME NULL,
         updatedAt DATETIME NULL
         ) DEFAULT CHARACTER SET utf8mb4;
-        
