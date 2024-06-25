@@ -5,11 +5,6 @@ const { Sequelize } = require('sequelize');
 
 // Conexion a la base de datos 
 
-/* DB_HOST=localhost
-DB_USER=javier
-DB_PASSWORD=Themidway28
-DB_NAME=users_petShop
-DB_PORT=3306 */
 
 
 const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {

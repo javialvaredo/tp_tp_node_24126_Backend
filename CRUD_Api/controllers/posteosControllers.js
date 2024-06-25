@@ -28,7 +28,8 @@ const bcrypt = require('bcrypt'); // importamos dependencia para encriptar el pa
     } 
     // Si las credenciales son correctas, se puede generar un token de autenticación acá (es lo que piden!) o devolver la info al usuario
     //return res.status(200).json({ message: 'Inicio de sesión exitoso' });
-    return res.redirect('http://localhost:5500/crud.html');  //direccion y puerto de frontend
+    //return res.redirect('http://localhost:5500/crud.html');  //direccion y puerto de frontend
+    return res.status(200).json({ message: 'Inicio de sesión exitoso', redirectUrl: 'http://localhost:5500/crud.html' });
         
     
   }  catch (error) {
