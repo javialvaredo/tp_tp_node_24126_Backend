@@ -21,7 +21,7 @@ module.exports = {
   HOST: process.env.HOST || '127.0.0.1',
   PORT: process.env.PORT || 3000,
   DB_HOST: process.env.DB_HOST || 'mysql-javi-alvaredo.alwaysdata.net',
-  DB_USER: process.env.DB_USER ||'363042_javier',
+  DB_USER: process.env.DB_USER ||'363042_javier@2a00:b6e0:1:210:1::1',
   DB_PASSWORD: process.env.DB_PASSWORD || 'Pentiumalways4+',
   DB_NAME: process.env.DB_NAME ||'users_petShop',
   DB_PORT: process.env.DB_PORT || 3306

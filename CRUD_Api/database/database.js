@@ -30,6 +30,6 @@ const testConnection = async () => {
   }
 };
 
-testConnection();
+//testConnection();
 
 module.exports = db;
