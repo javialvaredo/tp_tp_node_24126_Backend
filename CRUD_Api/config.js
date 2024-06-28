@@ -9,20 +9,20 @@
 
 
 const dotenv = require('dotenv');
-const path = require('path');
+/* const path = require('path');
 
 dotenv.config({
   path: path.resolve(__dirname, process.env.NODE_ENV + '.env')
-});
+}); */
 
 module.exports = {
 
-  NODE_ENV: process.env.NODE_ENV || 'production',
-  HOST: process.env.HOST || '127.0.0.1',
-  PORT: process.env.PORT || 3000,
-  DB_HOST: process.env.DB_HOST || 'mysql-javi-alvaredo.alwaysdata.net',
-  DB_USER: process.env.DB_USER ||'363042_javier@2a00:b6e0:1:210:1::1',
-  DB_PASSWORD: process.env.DB_PASSWORD || 'Pentiumalways4+',
-  DB_NAME: process.env.DB_NAME ||'javi-alvaredo_paseadores',
-  DB_PORT: process.env.DB_PORT || 3306
+  NODE_ENV: process.env.NODE_ENV, 
+  HOST: process.env.HOST,
+  PORT: process.env.PORT,
+  DB_HOST: process.env.DB_HOST,
+  DB_USER: process.env.DB_USER,
+  DB_PASSWORD: process.env.DB_PASSWORD,
+  DB_NAME: process.env.DB_NAME,
+  DB_PORT: process.env.DB_PORT
 }
