@@ -17,12 +17,12 @@ dotenv.config({
 
 module.exports = {
 
-  NODE_ENV: process.env.NODE_ENV || 'development',
-  HOST: process.env.HOST || '127.0.0.1',
-  PORT: process.env.PORT || 3000,
-  DB_HOST: process.env.DB_HOST || 'localhost',
-  DB_USER: process.env.DB_USER ||'javier',
-  DB_PASSWORD: process.env.DB_PASSWORD || 'Themidway28+',
-  DB_NAME: process.env.DB_NAME ||'users_petShop',
+  NODE_ENV: process.env.NODE_ENV || 'production',
+  HOST: process.env.HOST || 'http://javi-alvaredo.alwaysdata.net',
+  PORT: process.env.PORT || 8000,
+  DB_HOST: process.env.DB_HOST || 'https://phpmyadmin.alwaysdata.com/phpmyadmin',
+  DB_USER: process.env.DB_USER ||'363042_javier',
+  DB_PASSWORD: process.env.DB_PASSWORD || 'Pentiumalways4+',
+  DB_NAME: process.env.DB_NAME ||'javi-alvaredo_paseadores',
   DB_PORT: process.env.DB_PORT || 3306
 }
