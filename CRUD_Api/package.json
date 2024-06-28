@@ -5,6 +5,7 @@
   "scripts": {
     "test": "set HOST=localhost&& set PORT=8000&& node index.js",
     "start": "node index.js",
+    "dev": "set NODE_ENV=development&& nodemon index.js",
     "prod": "set NODE_ENV=production&& node index.js"
   },
   "keywords": [],
