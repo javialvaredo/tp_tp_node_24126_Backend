@@ -10,19 +10,19 @@
 
 const dotenv = require('dotenv');
 const path = require('path');
-
+/* 
 dotenv.config({
   path: path.resolve(__dirname, process.env.NODE_ENV + '.env')
-});
+}); */
 
 module.exports = {
 
-  NODE_ENV: process.env.NODE_ENV || 'development',
-  HOST: process.env.HOST || '127.0.0.1',
-  PORT: process.env.PORT || 3000,
-  DB_HOST: process.env.DB_HOST || 'localhost',
-  DB_USER: process.env.DB_USER ||'javier',
-  DB_PASSWORD: process.env.DB_PASSWORD || 'Themidway28+',
-  DB_NAME: process.env.DB_NAME ||'users_petShop',
-  DB_PORT: process.env.DB_PORT || 3306
+  NODE_ENV: process.env.NODE_ENV,
+  HOST: process.env.HOST,
+  PORT: process.env.PORT,
+  DB_HOST: process.env.DB_HOST,
+  DB_USER: process.env.DB_USER,
+  DB_PASSWORD: process.env.DB_PASSWORD,
+  DB_NAME: process.env.DB_NAME,
+  DB_PORT: process.env.DB_PORT
 }

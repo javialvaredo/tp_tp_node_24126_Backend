@@ -1,6 +1,6 @@
 // database.js
 //const config = require('./config.js')
-require('dotenv').config({ path: `./${process.env.NODE_ENV}.env` }); // Carga las variables de entorno
+require('dotenv').config(); // Carga las variables de entorno
 const { Sequelize } = require('sequelize');
 
 // Conexion a la base de datos 
