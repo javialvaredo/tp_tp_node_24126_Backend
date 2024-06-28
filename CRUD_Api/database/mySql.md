@@ -19,3 +19,9 @@ USE users_petShop;
         createdAt DATETIME NULL,
         updatedAt DATETIME NULL
         ) DEFAULT CHARACTER SET utf8mb4;
+
+
+Conectarse a servidor alwaysdata desde consola windows
+
+      USUARIO     ssh+DIRECCION SERVER       
+ssh javi-alvaredo@ssh-javi-alvaredo.alwaysdata.net
