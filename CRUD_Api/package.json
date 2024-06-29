@@ -5,8 +5,8 @@
   "scripts": {
     "test": "set HOST=localhost&& set PORT=8000&& node index.js",
     "start": "node index.js",
-    "dev": "set NODE_ENV=development&& nodemon index.js",
-    "prod": "set NODE_ENV=production&& node index.js"
+    "dev": "set NODE_ENV=development&& set PORT=3300&& set DB_NAME=users_petShop&& set DB_PORT=3306&& set DB_USER=javier&& set DB_PASSWORD=Themidway28+&& nodemon index.js",
+    "prod": "set NODE_ENV=production&& set PORT=3300&& set DB_NAME=users_petShop&& set DB_PORT=3306&& set DB_USER=javier&& set DB_PASSWORD=Themidway28+&& nodemon index.js"
   },
   "keywords": [],
   "author": "",

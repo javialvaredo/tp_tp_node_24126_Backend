@@ -80,7 +80,12 @@ const traerRegistros = async (req, res) => {
 const traerUnRegistro = async (req, res) => {
   try {
     const registro = await posteosModel.findByPk(req.params.id)
+    if (!registro) {
+      return res.status(404).json({ message: "Registro no encontrado" });
+    }
     res.json(registro)
+    console.log(registro.id);
+    
   } catch (error) {
     res.json({ message: error.message })
   }
