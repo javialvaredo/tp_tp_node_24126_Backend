@@ -23,3 +23,4 @@ app.use('/', posteosRouter)
 app.listen(config.PORT, config.HOST, () => {
     console.log(`Servidor corriendo en HTTP://${config.HOST}:${config.PORT}`)
 })
+

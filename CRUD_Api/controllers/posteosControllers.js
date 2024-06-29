@@ -39,8 +39,6 @@ const bcrypt = require('bcrypt'); // importamos dependencia para encriptar el pa
 }; 
 
 
-
-
 // Formulario Registro  -CREATE POST 
 const altaRegistro = async (req, res) => {
   const { usuario, nombre, apellido, telefono, password } = req.body;
@@ -80,9 +78,16 @@ const traerRegistros = async (req, res) => {
 const traerUnRegistro = async (req, res) => {
   try {
     const registro = await posteosModel.findByPk(req.params.id)
+   
+    if (!registro) {
+      
+      return res.status(404).json({error: 'usuario inexistente'})
+    }
     res.json(registro)
+    console.log(registro.usuario);
+    
   } catch (error) {
-    res.json({ message: error.message })
+    res.json({ message: error.message})
   }
 }
 
