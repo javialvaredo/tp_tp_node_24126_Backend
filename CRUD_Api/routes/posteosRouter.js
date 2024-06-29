@@ -24,7 +24,7 @@ router.post('/contacto-form', traerFormContacto)
 
 //direccion y puerto de frontend
 router.get('http://localhost:5500/crud.html', (req, res) => {
-    res.send('¡Bienvenido al CRUD!');
+    res.send('¡Bienvenidos, buscar usuario por ID!');
     
   });
 

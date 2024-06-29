@@ -13,14 +13,6 @@ const db = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.D
   port: process.env.DB_PORT
 });
 
-/* const db = new Sequelize('users_petShop', 'javier', 'Themidway28+', {
-  host: 'localhost', 
-  dialect: 'mysql',
-  port:3306
-});
- */
-
-
 
 const testConnection = async () => {
   try {
