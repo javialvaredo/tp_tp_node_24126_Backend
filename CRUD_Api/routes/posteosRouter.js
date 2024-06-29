@@ -11,6 +11,7 @@ const {
     traerFormContacto
 } = require('../controllers/posteosControllers.js')
 
+
 router.post('/login-form', login)
 router.post('/registro-form', altaRegistro)
 router.get('/registro-form', traerRegistros)

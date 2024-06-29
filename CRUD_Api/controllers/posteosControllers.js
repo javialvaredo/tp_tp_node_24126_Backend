@@ -39,7 +39,6 @@ const bcrypt = require('bcrypt'); // importamos dependencia para encriptar el pa
 }; 
 
 
-
 // Formulario Registro  -CREATE POST 
 const altaRegistro = async (req, res) => {
   const { usuario, nombre, apellido, telefono, password } = req.body;
