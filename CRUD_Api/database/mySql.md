@@ -25,3 +25,12 @@ Conectarse a servidor alwaysdata desde consola windows
 
       USUARIO     ssh+DIRECCION SERVER       
 ssh javi-alvaredo@ssh-javi-alvaredo.alwaysdata.net
+
+
+
+/* const db = new Sequelize('users_petShop', 'javier', 'Themidway28+', {
+  host: 'localhost', 
+  dialect: 'mysql',
+  port:3306
+});
+ */
