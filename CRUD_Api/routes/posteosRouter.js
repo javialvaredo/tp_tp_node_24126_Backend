@@ -7,8 +7,12 @@ const {
     traerUnRegistro,
     actualizarRegistro,
     borrarRegistro,
-    traerFormPaseadores,
-    traerFormContacto
+    traerPaseadores,
+    traerUnPaseador,
+    crearPaseador,
+    actualizarPaseador,
+    borrarPaseador
+   
 } = require('../controllers/posteosControllers.js')
 
 
@@ -17,17 +21,13 @@ router.post('/registro-form', altaRegistro)
 router.get('/registro-form', traerRegistros)
 router.get('/registro-form/:id', traerUnRegistro)
 router.put('/registro-form/:id', actualizarRegistro)
-
 router.delete('/registro-form/:id', borrarRegistro)
 
-router.post('/procesar_solicitud', traerFormPaseadores)
-router.post('/contacto-form', traerFormContacto)
-
-//direccion y puerto de frontend
-router.get('http://localhost:5500/crud.html', (req, res) => {
-    res.send('¡Bienvenido al CRUD!');
-    
-  });
-
+router.get ("/paseadores", traerPaseadores) 
+router.get ("/paseadores/:id", traerUnPaseador)
+router.post ("/paseadores", crearPaseador) 
+router.put ("/paseadores/:id", actualizarPaseador ) 
+router.delete ("/paseadores/:id", borrarPaseador)
+                   
 
 module.exports = router

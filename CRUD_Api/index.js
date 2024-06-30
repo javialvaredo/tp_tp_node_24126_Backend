@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 const posteosRouter = require('./routes/posteosRouter.js')
+
 const db = require('./database/database.js')
 const config = require('./config.js')
 

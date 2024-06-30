@@ -1,4 +1,6 @@
-const posteosModel = require('../models/usersModel.js');
+const posteosUsuarios = require('../models/usersModel.js');
+const paseadoresModel = require('../models/paseadoresModel.js')
+
 const db = require('../database/database.js')
 const bcrypt = require('bcrypt'); // importamos dependencia para encriptar el password
 
@@ -17,7 +19,7 @@ const bcrypt = require('bcrypt'); // importamos dependencia para encriptar el pa
   } 
 
   try {
-    const user = await posteosModel.findOne({ where: { usuario } });
+    const user = await posteosUsuarios.findOne({ where: { usuario } });
     if (!user) {
       return res.status(401).json({ message: 'Usuario no encontrado' });
     }
@@ -52,7 +54,7 @@ const altaRegistro = async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(password, 10); // encriptar el password
     
-    await posteosModel.create({
+    await posteosUsuarios.create({
       usuario,
       nombre,
       apellido,
@@ -70,7 +72,7 @@ const altaRegistro = async (req, res) => {
 //Traer todos los registros READ - GET 
 const traerRegistros = async (req, res) => {
   try {
-    const registros = await posteosModel.findAll()
+    const registros = await posteosUsuarios.findAll()
     res.json(registros)
   } catch (error) {
     res.json({ message: error.message })
@@ -79,7 +81,7 @@ const traerRegistros = async (req, res) => {
 
 const traerUnRegistro = async (req, res) => {
   try {
-    const registro = await posteosModel.findByPk(req.params.id)
+    const registro = await posteosUsuarios.findByPk(req.params.id)
     if (!registro) {
       return res.status(404).json({ message: "Registro no encontrado" });
     }
@@ -96,7 +98,7 @@ const traerUnRegistro = async (req, res) => {
 const actualizarRegistro = async (req, res) => {
   
   try {
-    await posteosModel.update(req.body, {where: {id:req.params.id} })
+    await posteosUsuarios.update(req.body, {where: {id:req.params.id} })
 
     res.json({message: "Registro actualizado correctamente"})
   } catch (error) {
@@ -107,7 +109,7 @@ const actualizarRegistro = async (req, res) => {
 // Formulario Registro  *DELETE*
 const borrarRegistro = async (req,res)=>{
   try {
-      await posteosModel.destroy({where :{id:req.params.id}})
+      await posteosUsuarios.destroy({where :{id:req.params.id}})
       res.json({message: "Registro Borrado correctamente"}) 
   } catch (error) {
       res.json({message:error.message}) 
@@ -115,10 +117,73 @@ const borrarRegistro = async (req,res)=>{
 }
 
 
+//------------------------------------ CRUD PASEADORES ------------------------------------------------------------------\\
+
+
+/* C R U D */
+/* create - read - update - delete */
+// MOSTRAR TODOS LOS REGISTROS - READ - GET
+const traerPaseadores= async (req,res)=>{
+  try {
+      const paseadores = await paseadoresModel.findAll() //  metodo de sequelize
+      res.json (paseadores)
+  } catch (error) {
+      res.json({message:error.message}) 
+  }
+}
+
+/* MOSTRAR UN REGISTRO  - READ - GET */
+const traerUnPaseador= async (req,res)=>{
+try {                                             /*  /2 */
+  const paseador = await paseadoresModel.findByPk(req.params.id)
+  res.json(paseador)
+} catch (error) {
+  res.json({message:error.message}) 
+}
+}
+
+
+
+
+/* CREAR UN REGISTRO - CREATE - POST */
+
+const crearPaseador = async (req,res)=>{
+  try {
+      await paseadoresModel.create(req.body)
+res.json({"message": "Registro creado correctamente"})
+  } catch (error) {
+      res.json({message:error.message}) 
+  }
+}
+
+/* ACTUALIZAR UN REGISTRO - UPDATE - PUT */
+
+const actualizarPaseador = async (req,res) =>{
+  try {
+      await paseadoresModel.update(req.body,{
+          where :{id:req.params.id}
+      })
+      res.json({"message": "Registro actualizado correctamente"}) 
+  } catch (error) {
+      res.json({message:error.message}) 
+  }
+}
+
+const borrarPaseador = async (req,res)=>{
+  try {
+      await paseadoresModel.destroy({where :{id:req.params.id}})
+      res.json({"message": "Paseador Borrado correctamente"}) 
+  } catch (error) {
+      res.json({message:error.message}) 
+  }
+}
+
 
 //--------------------------------------------OTROS FORMULARIOS A EVALUAR SU USO -------------------------------------------------------\\
 
-// Formulario paseadores
+
+
+/* // Formulario paseadores
 const traerFormPaseadores = (req, res) => {
   const formData = req.body;
   console.log(formData)
@@ -132,7 +197,7 @@ const traerFormContacto = (req, res) => {
   const formData = req.body;
   console.log(formData);
   res.send('probando Formulario Contacto')
-}
+} */
 
 
 module.exports = {
@@ -142,6 +207,10 @@ module.exports = {
   traerUnRegistro,
   actualizarRegistro,
   borrarRegistro,
-  traerFormPaseadores,
-  traerFormContacto
+  traerPaseadores,
+  traerUnPaseador,
+  crearPaseador,
+  actualizarPaseador,
+  borrarPaseador
+  
 }  
